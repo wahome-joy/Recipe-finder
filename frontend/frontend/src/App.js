@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import Pages from "./pages/Pages";
+import Category from "./components/Category";
+import { BrowserRouter, Link } from "react-router-dom";
+import Search from "./components/Search";
+import styled from "styled-components";
+import Logo from "./Imgs/main-logo.png";
+
+const LogoImage = styled.img`
+  width: 100px;
+  height: auto;
+  margin: 20px;
+  text-align: center;
+`;
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Link to="/">
+          <LogoImage src={Logo} alt="Your Logo" />
+        </Link>
+        <Search />
+        <Category />
+        <Pages />
+      </BrowserRouter>
     </div>
   );
 }
 
 export default App;
+
